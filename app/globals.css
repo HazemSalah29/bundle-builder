@@ -1,26 +1,141 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@theme {
+  /* Colors */
+  --color-primary: #4e2fd2;
+  --color-primary-text-on: #ffffff;
+  --color-ink: #0b0d10;
+  --color-body: #1f1f1f;
+  --color-muted: #484848;
+  --color-price-secondary: #575757;
+  --color-muted-2: #6f7882;
+  --color-label-faint: #a8b2bd;
+  --color-danger-strike: #d8392b;
+  --color-border: #ced6de;
+  --color-border-light: #e6ebf0;
+  --color-surface-alt: #f0f4f7;
+  --color-surface-alt-2: #f1f1f2;
+  --color-page-tint: #edf4ff;
+  --color-surface: #ffffff;
+  --color-success: #0aa288;
+  --color-success-bright: #1df0bb;
+  --color-info-icon: #0046c7;
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  /* Radii */
+  --radius-card: 10px;
+  --radius-image: 5px;
+  --radius-badge: 10px;
+  --radius-tag: 2px;
+  --radius-stepper: 4px;
+  --radius-button: 4px;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  /* Font family */
+  --font-sans: var(--font-poppins);
+
+  /* Type scale (size/line-height/letter-spacing as separate tokens) */
+  --text-eyebrow: 12px;
+  --text-eyebrow--line-height: 12px;
+  --text-eyebrow--letter-spacing: 1.6px;
+
+  --text-step-title: 28px;
+  --text-step-title--line-height: 28px;
+  --text-step-title--letter-spacing: 0px;
+
+  --text-step-state: 14px;
+  --text-step-state--line-height: 16px;
+  --text-step-state--letter-spacing: 0px;
+
+  --text-badge: 12px;
+  --text-badge--line-height: 14.7px;
+  --text-badge--letter-spacing: 0px;
+
+  --text-product-title: 18px;
+  --text-product-title--line-height: 18px;
+  --text-product-title--letter-spacing: 0.6px;
+
+  --text-product-title-sm: 16px;
+  --text-product-title-sm--line-height: 16px;
+  --text-product-title-sm--letter-spacing: 0.6px;
+
+  --text-product-description: 14px;
+  --text-product-description--line-height: 18.2px;
+  --text-product-description--letter-spacing: 0.6px;
+
+  --text-product-description-sm: 12px;
+  --text-product-description-sm--line-height: 15.6px;
+  --text-product-description-sm--letter-spacing: 0.6px;
+
+  --text-variant-chip: 10px;
+  --text-variant-chip--line-height: 10px;
+  --text-variant-chip--letter-spacing: 0.6px;
+
+  --text-stepper-count: 16px;
+  --text-stepper-count--line-height: 20px;
+  --text-stepper-count--letter-spacing: 0px;
+
+  --text-price-compare: 16px;
+  --text-price-compare--line-height: 16px;
+  --text-price-compare--letter-spacing: 0.6px;
+
+  --text-price-active: 16px;
+  --text-price-active--line-height: 16px;
+  --text-price-active--letter-spacing: 0.08px;
+
+  --text-next-button: 18px;
+  --text-next-button--line-height: 24px;
+  --text-next-button--letter-spacing: 0px;
+
+  --text-review-intro: 16px;
+  --text-review-intro--line-height: 20.8px;
+  --text-review-intro--letter-spacing: 0.6px;
+
+  --text-review-category: 12px;
+  --text-review-category--line-height: 16px;
+  --text-review-category--letter-spacing: 0.36px;
+
+  --text-review-item-name: 18px;
+  --text-review-item-name--line-height: 16px;
+  --text-review-item-name--letter-spacing: 0.09px;
+
+  --text-review-item-qty: 14px;
+  --text-review-item-qty--line-height: 16px;
+  --text-review-item-qty--letter-spacing: 0px;
+
+  --text-review-item-price: 16px;
+  --text-review-item-price--line-height: 16px;
+  --text-review-item-price--letter-spacing: 0.08px;
+
+  --text-plan-name: 20px;
+  --text-plan-name--line-height: 20px;
+  --text-plan-name--letter-spacing: -0.04px;
+
+  --text-guarantee-copy: 18px;
+  --text-guarantee-copy--line-height: 19.8px;
+  --text-guarantee-copy--letter-spacing: 0.6px;
+
+  --text-financing: 16px;
+  --text-financing--line-height: 19.4px;
+  --text-financing--letter-spacing: -0.8px;
+
+  --text-total-strike: 22px;
+  --text-total-strike--line-height: 20px;
+  --text-total-strike--letter-spacing: 0.055px;
+
+  --text-total-active: 28px;
+  --text-total-active--line-height: 32px;
+  --text-total-active--letter-spacing: -0.035px;
+
+  --text-savings-callout: 14px;
+  --text-savings-callout--line-height: 14px;
+  --text-savings-callout--letter-spacing: -0.056px;
+
+  --text-save-link: 14px;
+  --text-save-link--line-height: 16.8px;
+  --text-save-link--letter-spacing: -0.016px;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-surface);
+  color: var(--color-body);
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
 }

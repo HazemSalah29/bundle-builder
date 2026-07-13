@@ -1,0 +1,10 @@
+node_modules
+.next
+.git
+.vscode
+backend
+context
+*.md
+npm-debug.log*
+.DS_Store
+.env*.local
